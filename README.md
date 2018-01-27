@@ -4,5 +4,5 @@ O objetivo deste aplicativo é apenas de servir como exemplo de app com comunica
 
 
 Implementação do web service pode ser vista aqui:
- - https://github.com/guilhermeNatan/guiacomercialapp
+ - https://github.com/guilhermeNatan/webserviceapp
 
