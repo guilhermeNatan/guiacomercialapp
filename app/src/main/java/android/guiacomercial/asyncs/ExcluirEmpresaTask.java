@@ -1,11 +1,7 @@
 package android.guiacomercial.asyncs;
 
-import android.content.Context;
+import android.app.Activity;
 import android.guiacomercial.dao.WebClient;
-import android.guiacomercial.model.Empresa;
-import android.widget.Toast;
-
-import java.util.List;
 
 /**
  * Created by guilherme.natan on 24/01/2018.
@@ -13,9 +9,11 @@ import java.util.List;
 
 public class ExcluirEmpresaTask extends BaseAsyncTask<Long,Void,String> {
 
-    public ExcluirEmpresaTask(Context context) {
-        super(context);
+
+    public ExcluirEmpresaTask(Activity activity) {
+        super(activity);
     }
+
 
     @Override
     protected String doInBackground(Long... ints) {
@@ -25,6 +23,8 @@ public class ExcluirEmpresaTask extends BaseAsyncTask<Long,Void,String> {
 
     @Override
     protected void onPostExecute(String s) {
-        Toast.makeText(getContext(),s, Toast.LENGTH_LONG).show();
+        BuscarEmpresasTask buscarTarefaTask =
+                new BuscarEmpresasTask(getActivity());
+        buscarTarefaTask.execute();
     }
 }

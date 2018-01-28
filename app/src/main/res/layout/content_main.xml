@@ -8,30 +8,36 @@
     tools:context="android.guiacomercial.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_salvar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Salvar" />
+    </FrameLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-        <Button
-            android:id="@+id/btn_excluir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Excluir" />
+        <!--<Button-->
+            <!--android:id="@+id/btn_salvar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:text="Salvar" />-->
 
-        <Button
-            android:id="@+id/btn_listar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Listar" />
-    </LinearLayout>
+        <!--<Button-->
+            <!--android:id="@+id/btn_excluir"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:text="Excluir" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_listar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:text="Listar" />-->
+    <!--</LinearLayout>-->
 
 </android.support.constraint.ConstraintLayout>

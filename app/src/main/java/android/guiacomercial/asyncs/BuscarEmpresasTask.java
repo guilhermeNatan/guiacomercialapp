@@ -1,25 +1,23 @@
 package android.guiacomercial.asyncs;
 
-import android.content.Context;
+import android.app.Activity;
+import android.guiacomercial.AdaptadorLista;
+import android.guiacomercial.R;
 import android.guiacomercial.dao.WebClient;
 import android.guiacomercial.model.Empresa;
-import android.widget.Toast;
+import android.widget.ListView;
 
 import java.util.List;
 
-import lombok.Getter;
-
 /**
+ * Busca e lista todas as empresas da base de dados.
  * Created by guilherme.natan on 22/01/2018.
  */
-
 public class BuscarEmpresasTask extends BaseAsyncTask<Void, Void, List<Empresa>>{
 
-    @Getter
-    private List<Empresa> resultado;
 
-    public BuscarEmpresasTask(Context context) {
-       super(context);
+    public BuscarEmpresasTask(Activity activity) {
+        super(activity);
     }
 
     @Override
@@ -35,8 +33,9 @@ public class BuscarEmpresasTask extends BaseAsyncTask<Void, Void, List<Empresa>>
      */
     @Override
     protected void onPostExecute(List<Empresa> empresas) {
-        Toast.makeText(getContext(),"Quantidade de empresas: " +
-                empresas.size(), Toast.LENGTH_LONG).show();
+        ListView listaCartelas = getActivity().findViewById(R.id.lista_empresas);
+        final AdaptadorLista adaptador = new AdaptadorLista(empresas, getActivity());
+        listaCartelas.setAdapter(adaptador);
     }
 
 

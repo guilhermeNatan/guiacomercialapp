@@ -17,8 +17,8 @@ public class Empresa extends EntidadeBase {
 
     }
 
-    public Empresa(Integer nota, String nome, String descricao) {
-        this.nota = nota;
+    public Empresa(String nome, String descricao) {
+        this.nota = 0;
         this.nome = nome;
         this.descricao = descricao;
     }
