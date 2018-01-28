@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.guiacomercial.dao.WebClient;
 
 /**
+ * Task para excluir uma empresa
  * Created by guilherme.natan on 24/01/2018.
  */
 

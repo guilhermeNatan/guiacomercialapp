@@ -48,7 +48,7 @@ public class AdaptadorLista extends BaseAdapter {
                 .inflate(R.layout.item_empresa, viewGroup, false);
         final Empresa empresa = empresas.get(i);
         TextView texto = itemLista.findViewById(R.id.item_lista_empresa);
-        texto.setText(empresa.getNome());
+        texto.setText(empresa.getNome().toUpperCase());
         Button excluir = itemLista.findViewById(R.id.btn_excluirempresa);
         excluir.setOnClickListener(new View.OnClickListener() {
             @Override

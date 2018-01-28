@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:ems="10"
+        android:ems="15"
         android:inputType="textPersonName"
         android:text="" />
 
@@ -31,8 +31,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:ems="15"
+        android:inputType="textAutoComplete|textMultiLine|textPersonName"
         android:text="" />
 
     <Button
@@ -41,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
         android:text="Salvar" />
-
 
 
 
