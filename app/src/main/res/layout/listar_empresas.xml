@@ -8,6 +8,6 @@
         android:layout_alignParentTop="true"
         android:divider="@color/divider"
         android:dividerHeight="1dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="5dp" />
 
 </RelativeLayout>

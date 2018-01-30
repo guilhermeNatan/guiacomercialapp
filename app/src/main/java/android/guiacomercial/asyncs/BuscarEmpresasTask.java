@@ -3,7 +3,6 @@ package android.guiacomercial.asyncs;
 import android.app.Activity;
 import android.guiacomercial.AdaptadorLista;
 import android.guiacomercial.R;
-import android.guiacomercial.dao.WebClient;
 import android.guiacomercial.model.Empresa;
 import android.widget.ListView;
 
@@ -22,8 +21,7 @@ public class BuscarEmpresasTask extends BaseAsyncTask<Void, Void, List<Empresa>>
 
     @Override
     protected List<Empresa> doInBackground(Void... voids) {
-        WebClient wc = new WebClient();
-        List<Empresa> empresas = wc.get();
+        List<Empresa> empresas = getWebClient().get();
         return empresas;
     }
 

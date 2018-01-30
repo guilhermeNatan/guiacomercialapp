@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -28,7 +28,7 @@ public class ExampleUnitTest {
     {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-        Empresa empresa = new Empresa(10,"ssss", "bbb");
+        Empresa empresa = new Empresa("ssss", "bbb");
 
         String s = null;
         try {
@@ -53,8 +53,8 @@ public class ExampleUnitTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         ArrayList<Empresa> array = new ArrayList<Empresa>();
-        array.add(new Empresa(10,"ssss", "bbb"));
-        array.add(new Empresa(20,"adfadfafd", "cccc"));
+        array.add(new Empresa("ssss", "bbb"));
+        array.add(new Empresa("adfadfafd", "cccc"));
 
         String s = null;
         try {

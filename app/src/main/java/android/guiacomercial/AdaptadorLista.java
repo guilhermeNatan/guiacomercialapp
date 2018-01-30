@@ -49,15 +49,43 @@ public class AdaptadorLista extends BaseAdapter {
         final Empresa empresa = empresas.get(i);
         TextView texto = itemLista.findViewById(R.id.item_lista_empresa);
         texto.setText(empresa.getNome().toUpperCase());
-        Button excluir = itemLista.findViewById(R.id.btn_excluirempresa);
-        excluir.setOnClickListener(new View.OnClickListener() {
+        configurarBtnExcluir(itemLista, empresa);
+        configurarBtnVisualizar(itemLista,empresa);
+        configurarBtnEditar(itemLista, empresa);
+        return itemLista;
+    }
+
+    private void configurarBtnEditar(View itemLista, Empresa empresa) {
+        Button editar = itemLista.findViewById(R.id.btn_editarempresa);
+        editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ExcluirEmpresaTask excluir = new ExcluirEmpresaTask(activity);
-                excluir.execute(empresa.getId());
+                //TODO : IMPLEMENTAR TASK QUE BUSCA APENAS UMA EMPRESA
+                // PASSAR INFORMAÇÃO DESSE FRAGMENT PARA O PROXIMO
+
             }
         });
-        return itemLista;
+    }
+
+    private void configurarBtnExcluir(View itemLista, final Empresa empresa) {
+        Button excluir = itemLista.findViewById(R.id.btn_excluirempresa);
+        excluir.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ExcluirEmpresaTask excluir = new ExcluirEmpresaTask(activity);
+                    excluir.execute(empresa.getId());
+                }
+        });
+    }
+
+    private void configurarBtnVisualizar(View itemLista, final Empresa empresa) {
+        Button visualizar = itemLista.findViewById(R.id.btn_editarempresa);
+        visualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO : IMPLEMENTAR TASK QUE BUSCA APENAS UMA EMPRESA
+            }
+        });
     }
 
 

@@ -1,9 +1,7 @@
 package android.guiacomercial;
 
-import android.app.FragmentManager;
 import android.guiacomercial.asyncs.SalvarEmpresaTask;
 import android.guiacomercial.model.Empresa;
-import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +36,8 @@ public class AdicionarEmpresaFragment extends BaseFragment {
                         descricao.getText().toString());
                 SalvarEmpresaTask salvarEmpresaTask = new SalvarEmpresaTask(getMyView());
                 salvarEmpresaTask.execute(empresa);
+
+                // TODO IMPLEMENTAR O EDITAR
             }
         });
 

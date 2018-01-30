@@ -1,32 +1,26 @@
 package android.guiacomercial.converters;
 
-import android.guiacomercial.model.Empresa;
+import android.guiacomercial.model.EntidadeBase;
 
-import org.json.JSONException;
-import org.json.JSONStringer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 
 /**
  * Created by guilherme.natan on 21/01/2018.
  */
-public class EmpresaConverter {
+public class EmpresaConverter<T extends EntidadeBase> {
 
-    public String converter(Empresa empresa)
+
+    public String converterEntidadeString(T entidade)
     {
-        JSONStringer json = new JSONStringer();
-
+        ObjectMapper mapper = new ObjectMapper();
+        String s = null;
         try {
-            json = json.object();
-            if (empresa.getId() != null) {
-                json.key("id").value(empresa.getId());
-            }
-            json.key("nome").value(empresa.getNome())
-                    .key("nota").value(empresa.getNota())
-                    .key("descricao").value(empresa.getDescricao()).endObject();
-
-        } catch (JSONException e) {
+            s= mapper.writeValueAsString(entidade);
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return json.toString();
-
+        return s;
     }
 }

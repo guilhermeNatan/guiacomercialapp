@@ -9,14 +9,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Created by guilherme.natan on 22/01/2018.
+ * Task para editar uma empresa
+ * Created by guilherme.natan on 29/01/2018.
  */
 
-public class SalvarEmpresaTask extends BaseAsyncTaskView<Empresa,Void, String> {
+public class EditarEmpresaTasck extends BaseAsyncTaskView<Empresa, Void, String> {
 
     private ProgressDialog dialog;
-
-    public SalvarEmpresaTask(View view) {
+    /**
+     * Cosntrutor para casos em que não há activity e sim view
+     *
+     * @param view
+     */
+    public EditarEmpresaTasck(View view) {
         super(view);
     }
 
@@ -28,9 +33,11 @@ public class SalvarEmpresaTask extends BaseAsyncTaskView<Empresa,Void, String> {
     @Override
     protected String doInBackground(Empresa... empresas) {
         EmpresaConverter converter = new EmpresaConverter();
-        String resposta = getWebClient().post(converter.converterEntidadeString(empresas[0]));
+        Empresa ep = empresas[0];
+        String resposta = getWebClient().put(converter.converterEntidadeString(ep),ep.getId());
         return resposta;
     }
+
 
     /**
      * Executado após o doInBackground

@@ -2,6 +2,7 @@ package android.guiacomercial.asyncs;
 
 import android.app.Activity;
 import android.content.Context;
+import android.guiacomercial.dao.WebClienteEmpresa;
 import android.os.AsyncTask;
 
 import lombok.Getter;
@@ -12,9 +13,12 @@ import lombok.Getter;
 public abstract class BaseAsyncTask<PARAMS,PROGRESS,RESULT> extends AsyncTask<PARAMS,PROGRESS, RESULT> {
     @Getter
     private Activity activity;
+    @Getter
+    private WebClienteEmpresa webClient;
 
     public BaseAsyncTask(Activity activity) {
         this.activity = activity;
+        webClient = new WebClienteEmpresa();
     }
 
     public Context getContext() {

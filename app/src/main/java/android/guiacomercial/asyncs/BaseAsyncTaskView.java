@@ -1,6 +1,7 @@
 package android.guiacomercial.asyncs;
 
 import android.content.Context;
+import android.guiacomercial.dao.WebClienteEmpresa;
 import android.os.AsyncTask;
 import android.view.View;
 
@@ -15,6 +16,8 @@ public abstract  class BaseAsyncTaskView <PARAMS,PROGRESS,RESULT> extends AsyncT
 
     @Getter
     private View view;
+    @Getter
+    private WebClienteEmpresa webClient;
 
     /**
      * Cosntrutor para casos em que não há activity e sim view
@@ -22,6 +25,7 @@ public abstract  class BaseAsyncTaskView <PARAMS,PROGRESS,RESULT> extends AsyncT
      */
     public BaseAsyncTaskView(View view) {
         this.view = view;
+        webClient = new WebClienteEmpresa();
     }
 
     public Context getContext() {
