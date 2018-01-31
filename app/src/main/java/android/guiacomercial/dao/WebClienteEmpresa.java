@@ -17,7 +17,7 @@ public class WebClienteEmpresa extends  WebClientBase<Empresa> implements WebCli
 
     @Override
     public String put(String json, Long id) {
-        return super.put(json,Paths.EMPRESAS + "/" + 8);
+        return super.put(json,Paths.EMPRESAS + 8);
     }
 
     @Override
@@ -27,6 +27,11 @@ public class WebClienteEmpresa extends  WebClientBase<Empresa> implements WebCli
 
     @Override
     public String delete(Long id) {
-        return super.delete(Paths.EMPRESAS + "/" + id);
+        return super.delete(Paths.EMPRESAS +  id);
+    }
+
+    @Override
+    public Empresa get(Long id) {
+        return super.getOne(Paths.EMPRESA + id, Empresa.class);
     }
 }

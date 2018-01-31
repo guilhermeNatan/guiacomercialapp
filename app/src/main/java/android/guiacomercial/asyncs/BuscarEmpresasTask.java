@@ -12,7 +12,7 @@ import java.util.List;
  * Busca e lista todas as empresas da base de dados.
  * Created by guilherme.natan on 22/01/2018.
  */
-public class BuscarEmpresasTask extends BaseAsyncTask<Void, Void, List<Empresa>>{
+public class BuscarEmpresasTask extends BaseAsyncTaskActivity<Void, Void, List<Empresa>> {
 
 
     public BuscarEmpresasTask(Activity activity) {

@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class Empresa extends EntidadeBase {
 
+    public static final String key = "Empresa";
+
     private Integer nota;
 
     private String nome;

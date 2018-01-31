@@ -20,4 +20,6 @@ public interface WebClient<T extends EntidadeBase> {
     List<T> get();
 
     String delete(Long id);
+
+    T get(Long id);
 }

@@ -1,6 +1,7 @@
 package android.guiacomercial;
 
 import android.app.Activity;
+import android.guiacomercial.asyncs.BuscarUmaEmpresaTask;
 import android.guiacomercial.asyncs.ExcluirEmpresaTask;
 import android.guiacomercial.model.Empresa;
 import android.view.View;
@@ -55,13 +56,13 @@ public class AdaptadorLista extends BaseAdapter {
         return itemLista;
     }
 
-    private void configurarBtnEditar(View itemLista, Empresa empresa) {
+    private void configurarBtnEditar(final View itemLista, final Empresa empresa) {
         Button editar = itemLista.findViewById(R.id.btn_editarempresa);
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO : IMPLEMENTAR TASK QUE BUSCA APENAS UMA EMPRESA
-                // PASSAR INFORMAÇÃO DESSE FRAGMENT PARA O PROXIMO
+                BuscarUmaEmpresaTask buscarUmaEmpresaTask = new BuscarUmaEmpresaTask(activity);
+                buscarUmaEmpresaTask.execute(empresa.getId());
 
             }
         });
@@ -78,12 +79,14 @@ public class AdaptadorLista extends BaseAdapter {
         });
     }
 
-    private void configurarBtnVisualizar(View itemLista, final Empresa empresa) {
-        Button visualizar = itemLista.findViewById(R.id.btn_editarempresa);
+    private void configurarBtnVisualizar(final View itemLista, final Empresa empresa) {
+        Button visualizar = itemLista.findViewById(R.id.btn_visualizarempresa);
         visualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO : IMPLEMENTAR TASK QUE BUSCA APENAS UMA EMPRESA
+                BuscarUmaEmpresaTask buscarUmaEmpresaTask = new BuscarUmaEmpresaTask(activity);
+                buscarUmaEmpresaTask.execute(empresa.getId());
+
             }
         });
     }

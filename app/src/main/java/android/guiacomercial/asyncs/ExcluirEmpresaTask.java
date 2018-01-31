@@ -7,7 +7,7 @@ import android.app.Activity;
  * Created by guilherme.natan on 24/01/2018.
  */
 
-public class ExcluirEmpresaTask extends BaseAsyncTask<Long,Void,String> {
+public class ExcluirEmpresaTask extends BaseAsyncTaskActivity<Long,Void,String> {
 
 
     public ExcluirEmpresaTask(Activity activity) {

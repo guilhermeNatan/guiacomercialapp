@@ -2,7 +2,7 @@ package android.guiacomercial.asyncs;
 
 import android.app.ProgressDialog;
 import android.guiacomercial.R;
-import android.guiacomercial.converters.EmpresaConverter;
+import android.guiacomercial.converters.Converter;
 import android.guiacomercial.model.Empresa;
 import android.view.View;
 import android.widget.TextView;
@@ -27,7 +27,7 @@ public class SalvarEmpresaTask extends BaseAsyncTaskView<Empresa,Void, String> {
 
     @Override
     protected String doInBackground(Empresa... empresas) {
-        EmpresaConverter converter = new EmpresaConverter();
+        Converter converter = new Converter();
         String resposta = getWebClient().post(converter.converterEntidadeString(empresas[0]));
         return resposta;
     }
@@ -43,6 +43,6 @@ public class SalvarEmpresaTask extends BaseAsyncTaskView<Empresa,Void, String> {
         final TextView descricao = getView().findViewById(R.id.cmp_descricao_empresa);
         nome.setText("");
         descricao.setText("");
-        Toast.makeText(getContext(),"Empresa adicionada", Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),o, Toast.LENGTH_LONG).show();
     }
 }

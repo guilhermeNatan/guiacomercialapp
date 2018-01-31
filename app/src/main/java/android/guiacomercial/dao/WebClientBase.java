@@ -95,6 +95,30 @@ public class WebClientBase<T extends EntidadeBase> {
     }
 
 
+    T getOne(String servico, Class clazz) {
+        try {
+            URL url = new URL(servico);
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+            HttpURLConnection connection = getHttpURLConnection(url);
+            connection.setRequestMethod(WebClient.GET);
+            connection.setReadTimeout(15 * 1000);
+            connection.connect();
+            Scanner scanner = new Scanner(connection.getInputStream());
+            String resposta = new String();
+            while (scanner.hasNext()) {
+                resposta = resposta + scanner.next();
+            }
+            return (T) mapper.readValue( resposta, clazz);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
      String delete(String servico) {
         try {
             URL url = new URL(servico);
