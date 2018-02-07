@@ -78,7 +78,7 @@ public class WebClientBase<T extends EntidadeBase> {
             Scanner scanner = new Scanner(connection.getInputStream());
             String resposta = new String();
             while (scanner.hasNext()) {
-                resposta = resposta + scanner.next();
+                resposta = resposta + scanner.nextLine();
             }
 
             JavaType type = mapper.getTypeFactory().
@@ -98,16 +98,16 @@ public class WebClientBase<T extends EntidadeBase> {
     T getOne(String servico, Class clazz) {
         try {
             URL url = new URL(servico);
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-            HttpURLConnection connection = getHttpURLConnection(url);
-            connection.setRequestMethod(WebClient.GET);
-            connection.setReadTimeout(15 * 1000);
-            connection.connect();
-            Scanner scanner = new Scanner(connection.getInputStream());
-            String resposta = new String();
-            while (scanner.hasNext()) {
-                resposta = resposta + scanner.next();
+                ObjectMapper mapper = new ObjectMapper();
+                mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+                HttpURLConnection connection = getHttpURLConnection(url);
+                connection.setRequestMethod(WebClient.GET);
+                connection.setReadTimeout(15 * 1000);
+                connection.connect();
+                Scanner scanner = new Scanner(connection.getInputStream());
+                String resposta = new String();
+                while (scanner.hasNext()) {
+                    resposta = resposta + scanner.nextLine();
             }
             return (T) mapper.readValue( resposta, clazz);
         } catch (MalformedURLException e) {

@@ -1,6 +1,8 @@
 package android.guiacomercial.asyncs;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.guiacomercial.R;
 import android.guiacomercial.converters.Converter;
 import android.guiacomercial.model.Empresa;
@@ -15,8 +17,8 @@ import android.widget.Toast;
 
 public class EditarEmpresaTask extends SalvarEmpresaTask {
 
-    public EditarEmpresaTask(View view) {
-        super(view);
+    public EditarEmpresaTask(Activity act, View view, Context context) {
+        super(act, view, context);
     }
 
 

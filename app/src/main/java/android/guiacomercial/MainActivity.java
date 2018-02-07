@@ -1,9 +1,12 @@
 package android.guiacomercial;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.guiacomercial.model.Empresa;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.List;
 
@@ -30,6 +34,18 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                FragmentManager manager = getFragmentManager();
+//                manager.beginTransaction().replace(R.id.content_frame,
+//                        new AdicionarEmpresaFragment()).commit();
+                Intent intent = new Intent(MainActivity.this, AdicionarEmpresaActivity.class);
+                startActivity(intent);
+            }
+        });
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

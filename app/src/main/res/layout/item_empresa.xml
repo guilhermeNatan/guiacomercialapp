@@ -2,38 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_gravity="center_horizontal">
+    android:layout_height="70dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="30dp">
 
     <TextView
         android:id="@+id/item_lista_empresa"
-        android:layout_width="190dp"
+        android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:textSize="16sp"
+        android:textColor="#ffff"
         />
 
     <Button
         android:id="@+id/btn_excluirempresa"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:text="Ex" />
+        android:layout_width="@dimen/btn_lista_with"
+        android:layout_marginRight="@dimen/btn_lista_margin_right"
+        android:layout_height="50dp"
+        android:layout_gravity="center|center_horizontal"
+        android:background="@drawable/ic_delete_forever_black_24dp"
+        />
 
     <Button
         android:id="@+id/btn_editarempresa"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:text="Edit" />
+        android:layout_width="@dimen/btn_lista_with"
+        android:layout_height="50dp"
+        android:layout_marginRight="@dimen/btn_lista_margin_right"
+        android:layout_gravity="center|center_horizontal"
+        android:background="@drawable/ic_create_black_24dp"
+        />
 
     <Button
         android:id="@+id/btn_visualizarempresa"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:text="Visu" />
+        android:layout_width="@dimen/btn_lista_with"
+        android:layout_height="50dp"
+        android:layout_gravity="center|center_horizontal"
+        android:background="@drawable/ic_pageview_black_24dp"
+        />
 </LinearLayout>

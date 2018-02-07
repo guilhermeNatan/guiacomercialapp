@@ -16,22 +16,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="15"
-        android:inputType="textPersonName"
-        android:text="" />
+        android:lines="1"
+        android:maxLength="255"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Descrição" />
+        android:text="Descrição"
+        />
 
     <EditText
         android:id="@+id/cmp_descricao_empresa"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="190dp"
         android:layout_marginTop="5dp"
+        android:maxLength="255"
         android:ems="15"
+        android:lines="13"
+        android:maxLines="13"
         android:inputType="textAutoComplete|textMultiLine|textPersonName"
         android:text="" />
 

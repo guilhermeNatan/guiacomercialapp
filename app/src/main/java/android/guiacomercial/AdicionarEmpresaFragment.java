@@ -6,6 +6,7 @@ import android.guiacomercial.converters.Converter;
 import android.guiacomercial.model.Empresa;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,7 @@ public class AdicionarEmpresaFragment extends BaseFragment {
 
     private void salvarEmpresa() {
         final TextView nome = getMyView().findViewById(R.id.cmp_nome_empresa);
+        nome.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         final TextView descricao = getMyView().findViewById(R.id.cmp_descricao_empresa);
         final Button salvar = (Button) getMyView().findViewById(R.id.btn_salvarEmpresa);
         salvar.setOnClickListener(new View.OnClickListener() {
@@ -64,14 +66,14 @@ public class AdicionarEmpresaFragment extends BaseFragment {
             public void onClick(View view) {
                 Empresa empresa = new Empresa(nome.getText().toString(),
                         descricao.getText().toString());
-                if (idEmpresa != null) {
-                    empresa.setId(idEmpresa);
-                    EditarEmpresaTask editarEmp = new EditarEmpresaTask(getMyView());
-                    editarEmp.execute(empresa);
-                } else {
-                    SalvarEmpresaTask salvarEmpresaTask = new SalvarEmpresaTask(getMyView());
-                    salvarEmpresaTask.execute(empresa);
-                }
+//                if (idEmpresa != null) {
+//                    empresa.setId(idEmpresa);
+//                    EditarEmpresaTask editarEmp = new EditarEmpresaTask(getMyView());
+//                    editarEmp.execute(empresa);
+//                } else {
+//                    SalvarEmpresaTask salvarEmpresaTask = new SalvarEmpresaTask(getMyView());
+//                    salvarEmpresaTask.execute(empresa);
+//                }
             }
         });
 

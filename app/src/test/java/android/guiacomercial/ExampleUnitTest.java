@@ -28,7 +28,7 @@ public class ExampleUnitTest {
     {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-        Empresa empresa = new Empresa("ssss", "bbb");
+        Empresa empresa = new Empresa("ssss adf", "bbb adfadf");
 
         String s = null;
         try {
@@ -53,8 +53,8 @@ public class ExampleUnitTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         ArrayList<Empresa> array = new ArrayList<Empresa>();
-        array.add(new Empresa("ssss", "bbb"));
-        array.add(new Empresa("adfadfafd", "cccc"));
+        array.add(new Empresa("sads  adfss", "bb  dfb"));
+        array.add(new Empresa("adfadfa  adsfd", "cccc adf"));
 
         String s = null;
         try {
