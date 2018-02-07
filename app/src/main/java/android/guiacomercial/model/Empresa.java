@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Empresa extends EntidadeBase implements Serializable{
+public class Empresa extends EntidadeBase {
 
     public static final String key = "Empresa";
 

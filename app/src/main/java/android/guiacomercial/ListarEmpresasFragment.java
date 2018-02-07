@@ -1,18 +1,6 @@
 package android.guiacomercial;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.guiacomercial.asyncs.BuscarEmpresasTask;
-import android.guiacomercial.model.Empresa;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
-
-import java.util.List;
 
 /**
  * Created by guilherme.natan on 27/01/2018.
