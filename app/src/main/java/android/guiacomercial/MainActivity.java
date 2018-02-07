@@ -6,7 +6,6 @@ import android.guiacomercial.model.Empresa;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -42,8 +41,7 @@ public class MainActivity extends AppCompatActivity
 //                FragmentManager manager = getFragmentManager();
 //                manager.beginTransaction().replace(R.id.content_frame,
 //                        new AdicionarEmpresaFragment()).commit();
-                Intent intent = new Intent(MainActivity.this, AdicionarEmpresaActivity.class);
-                startActivity(intent);
+                irParaActivityAdicionarEmpresa();
             }
         });
 
@@ -54,6 +52,12 @@ public class MainActivity extends AppCompatActivity
                 new ListarEmpresasFragment()).commit();
     }
 
+
+    private void irParaActivityAdicionarEmpresa()
+    {
+        Intent intent = new Intent(MainActivity.this, AdicionarEmpresaActivity.class);
+        startActivity(intent);
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -93,8 +97,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_salvarempresa) {
-           manager.beginTransaction().replace(R.id.content_frame,
-                   new AdicionarEmpresaFragment()).commit();
+            irParaActivityAdicionarEmpresa();
         } else if (id == R.id.nav_listaempresas) {
             manager.beginTransaction().replace(R.id.content_frame,
                     new ListarEmpresasFragment()).commit();

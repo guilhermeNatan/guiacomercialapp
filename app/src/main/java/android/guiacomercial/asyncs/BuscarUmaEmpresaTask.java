@@ -1,12 +1,9 @@
 package android.guiacomercial.asyncs;
 
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.guiacomercial.AdicionarEmpresaFragment;
-import android.guiacomercial.R;
-import android.guiacomercial.converters.Converter;
+import android.content.Intent;
+import android.guiacomercial.AdicionarEmpresaActivity;
 import android.guiacomercial.model.Empresa;
-import android.os.Bundle;
 
 /**
  * Task para obter uma empresa especifica .
@@ -26,14 +23,9 @@ public class BuscarUmaEmpresaTask extends BaseAsyncTaskActivity<Long, Void, Empr
 
     @Override
     protected void onPostExecute(Empresa empresa) {
-        Bundle bundle = new Bundle();
-        Converter<Empresa> converter = new Converter<>();
-        AdicionarEmpresaFragment fragInfo = new AdicionarEmpresaFragment();
-
-        bundle.putString(Empresa.key, converter.converterEntidadeString(empresa) );
-        fragInfo.setArguments(bundle);
-        FragmentManager manager = getActivity().getFragmentManager();
-        manager.beginTransaction().replace(R.id.content_frame,
-                fragInfo).commit();
+        Intent intent = new Intent(getActivity(), AdicionarEmpresaActivity.class);
+        intent.putExtra(Empresa.key, empresa);
+        getActivity().startActivity(intent);
     }
+
 }

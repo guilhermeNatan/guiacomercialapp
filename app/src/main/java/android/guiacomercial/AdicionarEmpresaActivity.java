@@ -29,8 +29,14 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_adicionar_empresa);
 
         mTextMessage = (TextView) findViewById(R.id.message);
-        salvarEmpresa();
 
+        if (getIntent().getExtras() != null &&
+                getIntent().getExtras().getSerializable(Empresa.key) != null) {
+            Empresa ep = (Empresa) getIntent().getExtras().getSerializable(Empresa.key);
+            idEmpresa = ep.getId();
+        }
+        salvarEmpresa();
+        carregarParaAlterar();
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setElevation(0);
@@ -63,19 +69,17 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
 
 
 
-//    private void carregarParaAlterar() {
-//        if(this.getArguments()!=null && this.getArguments().getString(Empresa.key)!=null)
-//        {
-//            Converter<Empresa> converter = new Converter<>();
-//            Empresa empresa = converter.converterStringEntidade(
-//                    this.getArguments().getString(Empresa.key), Empresa.class);
-//            final TextView nome = getMyView().findViewById(R.id.cmp_nome_empresa);
-//            final TextView descricao = getMyView().findViewById(R.id.cmp_descricao_empresa);
-//            nome.setText(empresa.getNome());
-//            descricao.setText(empresa.getDescricao());
-//            idEmpresa = empresa.getId();
-//        }
-//    }
+    private void carregarParaAlterar() {
+        if (getIntent().getExtras() != null &&
+                getIntent().getExtras().getSerializable(Empresa.key) != null) {
+            Empresa empresa = (Empresa) getIntent().getExtras().getSerializable(Empresa.key);
+            final TextView nome = findViewById(R.id.cmp_nome_empresa);
+            final TextView descricao = findViewById(R.id.cmp_descricao_empresa);
+            nome.setText(empresa.getNome());
+            descricao.setText(empresa.getDescricao());
+            idEmpresa = empresa.getId();
+        }
+    }
 
 
     @Override

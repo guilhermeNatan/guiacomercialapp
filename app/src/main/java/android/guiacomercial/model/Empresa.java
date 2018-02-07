@@ -1,11 +1,13 @@
 package android.guiacomercial.model;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Empresa extends EntidadeBase {
+public class Empresa extends EntidadeBase implements Serializable{
 
     public static final String key = "Empresa";
 
