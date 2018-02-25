@@ -17,7 +17,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,7 +24,11 @@
             android:name=".AdicionarEmpresaActivity"
             android:label="@string/title_activity_adicionar_empresa"
             android:parentActivityName=".MainActivity">
-
+        </activity>
+        <activity
+            android:name=".VisualizarEmpresaActivity"
+            android:label="@string/title_activity_visualizar_empresa"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 

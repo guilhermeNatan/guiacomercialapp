@@ -1,12 +1,11 @@
 package android.guiacomercial;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.guiacomercial.asyncs.BuscarUmaEmpresaTask;
 import android.guiacomercial.asyncs.ExcluirEmpresaTask;
 import android.guiacomercial.converters.Converter;
 import android.guiacomercial.model.Empresa;
-import android.os.Bundle;
+import android.guiacomercial.util.IntentBuilder;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -87,14 +86,12 @@ public class AdaptadorLista extends BaseAdapter {
         visualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle = new Bundle();
+
+                IntentBuilder builder = new IntentBuilder(activity, VisualizarEmpresaActivity.class);
                 Converter<Empresa> converter = new Converter<>();
-                VisualizarEmpresaFragment fragInfo = new VisualizarEmpresaFragment();
-                bundle.putString(Empresa.key, converter.converterEntidadeString(empresa) );
-                fragInfo.setArguments(bundle);
-                FragmentManager manager = activity.getFragmentManager();
-                manager.beginTransaction().replace(R.id.content_frame,
-                        fragInfo).commit();
+                builder
+                        .put(Empresa.key, converter.converterEntidadeString(empresa))
+                        .navergar();
             }
         });
     }
